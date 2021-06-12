@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ <listeners>
+   
+   <listener class-name="firstmaven.Listeners"/>
+  
+  </listeners>
+
+  <test  name="Test">
+  
+  <!--  <parameter name="SelectDepartCity" value="Durgapur"/>
+  <parameter name="SelectReturnCity" value="Lucknow"/>
+  
+ 
+  <parameter name="departMonthYear" value="October 2021"/>
+  
+    <parameter name="departDay" value="25"/>
+    <parameter name="returnMonthYear" value="October 2021"/>
+    
+    <parameter name="returnDay" value="29"/>-->
+    
+    <parameter name="URL" value="https://www.airasia.co.in/content/air-asia/en/home"/>
+    
+    <parameter name="from" value="pune"/>
+    <parameter name="to"   value="Chennai"/>
+    <parameter name="dmonth"   value="8"/>
+    <parameter name="ddate"   value="25"/>
+     <parameter name="rmonth"   value="9"/>
+      <parameter name="rdate"   value="15"/>
+    <parameter name="trip"  value="'Round trip'"/>
+    
+    
+  
+    
+  
+  
+  
+    <classes>
+      <class name="firstmaven.EndToEndTest2"/>
+     
+     
+    </classes>
+    
+   </test>
+    
+   
+ 
+    
+    
+   <!-- Test -->
+</suite> <!-- Suite -->
