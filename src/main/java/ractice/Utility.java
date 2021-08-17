@@ -14,6 +14,8 @@ public class Utility {
 	
 	
 	public WebDriver driver;
+	JavascriptExecutor js;
+	String pageLoadStatus=null;
 	
 	public Utility(WebDriver driver)
 	{
@@ -178,5 +180,33 @@ public class Utility {
 		WebElement element=getElement(locator);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
+	}
+	
+//	public void waitForAllElements(By locator,int timeout)
+//	{
+//		WebDriverWait wait=new WebDriverWait(driver,timeout);
+//		wait.until(ExpectedConditions.p
+//	}
+	
+	
+	public  void waitForPageLoad() {
+
+		do {
+
+		js = (JavascriptExecutor) driver;
+
+		pageLoadStatus = (String)js.executeScript("return document.readyState");
+
+		} while ( !pageLoadStatus.equals("complete") );
+
+		System.out.println("Page Loaded.");
+
+		}
+	public void waitForFrame(By Locator,int timeout)
+	{
+		WebDriverWait w= new WebDriverWait(driver,timeout);
+		
+		w.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(Locator));
+		
 	}
 }
