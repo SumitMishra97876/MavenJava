@@ -24,7 +24,7 @@ public class WebTable_Cricinfo {
 			driver.get("https://www.espncricinfo.com/series/ipl-2021-1249214/sunrisers-hyderabad-vs-kolkata-knight-riders-3rd-match-1254060/full-scorecard");
 			
 			
-			List<WebElement> list=driver.findElements(By.xpath("//a[contains(text(),'Andre Russell')]//ancestor::table[@class='table batsman']//tr[7]//following-sibling::td[2]"));
+			List<WebElement> list=driver.findElements(By.xpath("//a[@title='Andre Russell']//ancestor::table//tr[7]//following-sibling::td[2]"));
 			
 			int size=list.size();
 			

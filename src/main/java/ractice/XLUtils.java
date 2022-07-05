@@ -80,7 +80,13 @@ public class XLUtils {
 	{
 		fi=new FileInputStream(xlfile);
 		wb=new XSSFWorkbook(fi);
+		if(wb.getSheetIndex(xlsheet)==-1)
+			wb.createSheet(xlsheet);
 		ws=wb.getSheet(xlsheet);
+		
+		if(ws.getRow(rownum)==null)
+		
+		ws.createRow(rownum);
 		row=ws.getRow(rownum);
 		cell=row.createCell(colnum);
 		cell.setCellValue(data);

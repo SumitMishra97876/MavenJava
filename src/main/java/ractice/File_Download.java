@@ -15,10 +15,12 @@ public class File_Download {
 	public static void main(String[] args) {
          WebDriverManager.chromedriver().setup();
          String location=System.getProperty("user.dir")+"\\downloads";
+         
+         String location1= "C:\\Users\\DELL\\downloads";
 
          HashMap preferences=new HashMap();
          
-          preferences.put("download.default_directory", location);
+          preferences.put("download.default_directory", location1);
           
           ChromeOptions options =new ChromeOptions();
           
